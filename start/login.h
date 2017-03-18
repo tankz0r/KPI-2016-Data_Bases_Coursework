@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QtDebug>
+#include "mainform.h"
 
 namespace Ui {
 class Login;

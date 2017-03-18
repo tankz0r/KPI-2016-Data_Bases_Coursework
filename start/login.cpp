@@ -55,8 +55,18 @@ void Login::on_pushButton_clicked()
                 }
 
             }
+            else
+                 qDebug() << "Error " << db_driver.lastError().text();
+
             if (count ==1)
+            {
                 ui->label->setText("Autorization success");
+                this->hide();
+                MainForm mainform;
+                mainform.setModal(true);
+                mainform.exec();
+            }
+
             else
                 ui->label->setText("Autorization failed") ;
 //                else {
@@ -64,6 +74,8 @@ void Login::on_pushButton_clicked()
 //            }
 
     db_driver.close();
+    db_driver.removeDatabase(QSqlDatabase::defaultConnection);
+
 }
 
 

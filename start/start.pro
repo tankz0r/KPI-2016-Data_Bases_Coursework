@@ -13,8 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        login.cpp
+        login.cpp \
+    mainform.cpp \
+    documentbuy.cpp \
+    counteragent.cpp
 
-HEADERS  += login.h
+HEADERS  += login.h \
+    mainform.h \
+    documentbuy.h \
+    counteragent.h
 
-FORMS    += login.ui
+FORMS    += login.ui \
+    mainform.ui \
+    documentbuy.ui \
+    counteragent.ui
