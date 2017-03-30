@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icons/png/32/Modern3D/objects/antenna_waves_circular_blue.png</file>
+        <file>icons/png/32/Modern3D/objects/antenna_waves_circular_green.png</file>
+        <file>icons/png/32/Modern3D/objects/antenna_waves_circular_red.png</file>
+        <file>icons/png/32/Modern3D/objects/antenna.png</file>
+        <file>icons/png/32/Modern3D/objects/clock_0220.png</file>
+        <file>icons/png/32/Modern3D/objects/controls.png</file>
+        <file>icons/png/32/Modern3D/objects/exit.png</file>
+        <file>icons/png/32/Modern3D/objects/key_golden.png</file>
+        <file>icons/png/32/Modern3D/objects/key_silver.png</file>
+        <file>icons/png/32/Modern3D/objects/lightbulb_lit.png</file>
+        <file>icons/png/32/Modern3D/objects/lightbulb.png</file>
+        <file>icons/png/32/Modern3D/objects/lightning_cyan.png</file>
+        <file>icons/png/32/Modern3D/objects/lightning_green.png</file>
+        <file>icons/png/32/Modern3D/objects/lightning_red.png</file>
+        <file>icons/png/32/Modern3D/objects/lightning_yellow.png</file>
+        <file>icons/png/32/Modern3D/objects/magnet.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier_minus_blue.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier_minus_green.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier_minus_red.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier_plus_blue.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier_plus_green.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier_plus_red.png</file>
+        <file>icons/png/32/Modern3D/objects/magnifier.png</file>
+        <file>icons/png/32/Modern3D/objects/padlock_closed.png</file>
+        <file>icons/png/32/Modern3D/objects/padlock_open.png</file>
+        <file>icons/png/32/Modern3D/objects/painting_faded_no.png</file>
+        <file>icons/png/32/Modern3D/objects/painting_faded_yes.png</file>
+        <file>icons/png/32/Modern3D/objects/painting_faded.png</file>
+        <file>icons/png/32/Modern3D/objects/painting_no.png</file>
+        <file>icons/png/32/Modern3D/objects/painting_yes.png</file>
+        <file>icons/png/32/Modern3D/objects/painting.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_blue.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_cyan.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_green.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_magenta.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_red.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_white.png</file>
+        <file>icons/png/32/Modern3D/objects/tag_yellow.png</file>
+        <file>icons/png/32/Modern3D/objects/tools.png</file>
+        <file>icons/png/32/Modern3D/objects/wand.png</file>
+    </qresource>
+</RCC>
