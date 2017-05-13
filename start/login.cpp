@@ -9,6 +9,25 @@ Login::Login(QWidget *parent) :
     ui->setupUi(this);
 
 
+    this->setWindowTitle("Happy Cake");
+    this->setFixedSize(this->size());
+    QRect scr = QApplication::desktop()->screenGeometry(0);
+    move( scr.center() - rect().center() );
+
+    ui->lineEdit_user_name->setText("admin");
+    ui->lineEdit_password->setText("qq");
+
+    //connectdb();
+}
+
+Login::~Login()
+{
+    delete ui;
+}
+
+void Login::connectdb()
+{
+    qDebug() << "CONNECTBD";
     QString servername = "happycake.cme8l9aci84u.eu-central-1.rds.amazonaws.com";
     QString dbname = "test";
 
@@ -22,26 +41,21 @@ Login::Login(QWidget *parent) :
 
     if(db_driver.open())
     {
-//        qDebug() << dbname;
+    //        qDebug() << dbname;
         ui->label->setText("Opened!");
     }
     else
     {
           ui->label->setText("Error");
-//        qDebug() << "Error " << db_driver.lastError().text();
+    //        qDebug() << "Error " << db_driver.lastError().text();
     }
-
-
-
 }
 
-Login::~Login()
-{
-    delete ui;
-}
 
 void Login::on_pushButton_clicked()
 {
+    connectdb();
+
     QString name, pass;
     name = ui->lineEdit_user_name->text();
     pass = ui->lineEdit_password->text();
@@ -52,38 +66,38 @@ void Login::on_pushButton_clicked()
             {
                 while(query.next())
                 {
-//                    qDebug() << query.value(0).toString() << query.value(1).toString();
+                        //qDebug() << query.value(0).toString() << query.value(1).toString();
                         count++;
                 }
 
             }
             else
                  qDebug() << "Error " << db_driver.lastError().text();
-
+                 //qDebug() << "COUNT" << count;
             if (count ==1)
             {
                 ui->label->setText("Autorization success");
                 this->hide();
+
+                qDebug() << "DELETECONNECTBD";
+                db_driver.close();
+                db_driver.removeDatabase(QSqlDatabase::defaultConnection);
+                qDebug() << "AfterDelete" << QSqlDatabase::database().connectionNames();
+
                 MainForm mainform(this, name);
                 mainform.setModal(true);
                 mainform.exec();
 
-                //cont.setWindowFlags(Qt::Widget);
-                //cont.setWindowModality(Qt::ApplicationModal);
-                //cont.hide();
-                //cont.show();
-
-
             }
 
             else
-                ui->label->setText("Autorization failed") ;
-//                else {
+                ui->label->setText("<html><head/><body><p style=\"color:red;\"> Autorization failed "
+                                           "</p></body></html>");
+//            else {
 //                qDebug() << "Error " << db_driver.lastError().text();
 //            }
 
-    db_driver.close();
-    db_driver.removeDatabase(QSqlDatabase::defaultConnection);
+
 
 }
 
