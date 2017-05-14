@@ -1,0 +1,7 @@
+****************************************************************************
+* NCReport 2.19.1
+* Release date: 16.Apr.2016
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+- 0071811: [Report engine library] NCReport::addReportToBatch (administrator) - resolved.

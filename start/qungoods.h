@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QShortcut>
 
+
 namespace Ui {
 class qungoods;
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NCReport version="2.20.1" name="Untitled" type="report">
+    <options>
+        <encoding>utf8</encoding>
+        <language>00</language>
+        <langrole>0</langrole>
+        <orientation>portrait</orientation>
+        <pagesize width="210.000" height="297.000">A4</pagesize>
+        <topmargin>15</topmargin>
+        <bottommargin>15</bottommargin>
+        <leftmargin>20</leftmargin>
+        <rightmargin>20</rightmargin>
+        <backcolor>#ffffff</backcolor>
+        <columns>0</columns>
+        <columnspace>0</columnspace>
+        <zoneSpacing>0</zoneSpacing>
+        <zoneBreak>false</zoneBreak>
+        <varErrorAlert>false</varErrorAlert>
+        <fontname>Nimbus Roman No9 L</fontname>
+        <fontsize>10</fontsize>
+        <fontstyle></fontstyle>
+        <htmlBodyStyle>{DEFAULT}</htmlBodyStyle>
+        <labelColumnCount>0</labelColumnCount>
+        <labelRowCount>0</labelRowCount>
+        <labelHGap>0</labelHGap>
+        <labelVGap>0</labelVGap>
+        <labelWidth>-1</labelWidth>
+        <labelHeight>-1</labelHeight>
+        <labelDirection>horizontal</labelDirection>
+    </options>
+    <datasources>
+        <datasource id="DataSource1" allowEmpty="true" enabled="true" type="txt" openRole="begin" source="static" columnDelimiter="tab" encoding="UTF-8">0000</datasource>
+    </datasources>
+    <variables/>
+    <scripts/>
+    <pageheader id="phead" height="109.432">
+        <rectangle id="8" zValue="-10" posX="0.000" posY="0.000" width="84.878" height="77.047" lineColor="#000000" lineStyle="solid" lineWidth="0.100" fillStyle="no" fillColor="#ffffff"/>
+        <label id="P2WJQ" zValue="0" posX="0.000" posY="0.000" width="169.968" height="5.080" fontName="Times New Roman" fontSize="8" alignment="1">This is a text for testing font size: 8 point</label>
+        <label id="1" zValue="1" posX="0.000" posY="7.832" width="169.968" height="5.080" fontName="Times New Roman" fontSize="10" alignment="1">This is a text for testing font size: 10 point</label>
+        <label id="2" zValue="2" posX="0.000" posY="16.087" width="169.968" height="5.080" fontName="Times New Roman" fontSize="12" alignment="1">This is a text for testing font size: 12 point</label>
+        <label id="3" zValue="3" posX="0.000" posY="24.130" width="169.968" height="6.350" fontName="Times New Roman" fontSize="14" alignment="1">This is a text for testing font size: 14 point</label>
+        <label id="4" zValue="4" posX="0.000" posY="33.655" width="169.968" height="6.350" fontName="Times New Roman" fontSize="16" alignment="1">This is a text for testing font size: 16 point</label>
+        <label id="5" zValue="5" posX="0.000" posY="43.180" width="169.968" height="7.832" fontName="Times New Roman" fontSize="18" alignment="1">This is a text for testing font size: 18 point</label>
+        <label id="6" zValue="6" posX="0.000" posY="54.398" width="169.968" height="7.832" fontName="Times New Roman" fontSize="20" alignment="1">This is a text for testing font size: 20 point</label>
+        <label id="7" zValue="7" posX="0.000" posY="65.617" width="169.968" height="9.737" fontName="Times New Roman" fontSize="22" alignment="1">This is a text for testing font size: 22 point</label>
+        <label id="9J1RL" zValue="7" posX="0.000" posY="77.470" width="169.968" height="9.737" fontName="Times New Roman" fontSize="24">This is a text for testing font size: 24 point</label>
+        <label id="JK10T" zValue="7" posX="0.000" posY="86.360" width="169.968" height="9.737" fontName="Times New Roman" fontSize="36">This is a text for testing font size: 36 point</label>
+        <label id="TKV6D" zValue="7" posX="0.000" posY="96.520" width="172.393" height="11.248" fontName="Times New Roman" fontSize="48">This is a text for testing font size: 48 point</label>
+        <rectangle id="9" zValue="9" posX="84.455" posY="0.000" width="84.878" height="77.047" lineColor="#000000" lineStyle="solid" lineWidth="0.100" fillStyle="no" fillColor="#ffffff"/>
+    </pageheader>
+    <pagefooter id="pfoot" height="1.604"/>
+    <details>
+        <detail id="Detail1" height="1.336" datasource="DataSource1">
+            <items/>
+        </detail>
+    </details>
+</NCReport>

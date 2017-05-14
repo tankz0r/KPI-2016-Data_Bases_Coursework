@@ -1,0 +1,12 @@
+****************************************************************************
+* NCReport 2.19.0
+* Release date: 29.Feb.2016
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+- 0071480: [General] LABEL printing system (administrator) - resolved.
+- 0071807: [General] Minor fixes in report engine and designer GUI (administrator) - resolved.
+- 0071805: [Report engine library] Report source class to convert to pointer based. (administrator) - resolved.
+- 0071806: [General] Endless, pageless media support (administrator) - resolved.
+- 0071804: [General] Report source factory to better support custom report source management (administrator) - resolved.
+

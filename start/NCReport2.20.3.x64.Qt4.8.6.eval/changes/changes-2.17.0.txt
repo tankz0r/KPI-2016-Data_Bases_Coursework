@@ -1,0 +1,15 @@
+****************************************************************************
+* NCReport 2.17.0
+* Release date: 15.Nov.2015
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+- 0071780: [Designer] progress-bar in Designer (run report multiple times) (administrator) - resolved.
+- 0071778: [General] Barcode: Print only when no error (administrator) - resolved.
+- 0071779: [Report engine library] NCRDItemWidgetFactory: 'Q_OBJECT'-macro missing (administrator) - resolved.
+- 0071791: [Designer] Report item validation check if the item can be placed to a section (administrator) - resolved.
+- 0071664: [Report engine library] Group footer: access to first/last row of that group (administrator) - resolved.
+- 0071781: [Report engine library] no report preview when variable uses '<%...%>' and 'not existing column' (administrator) - resolved.
+- 0071790: [Designer] Save Custom configuration text in Designer (administrator) - resolved.
+- 0071787: [General] Data sources to enable/disable in the report (administrator) - resolved.
+- Several minor fixes

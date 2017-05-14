@@ -12,9 +12,17 @@
 #include "qungoods.h"
 #include "errorwindow.h"
 #include "enhancedtablewidget.h"
+#include "graph.h"
+#include "qcustomplot/qcustomplot.h"
+
 
 #include <fstream>
 #include <iostream>
+
+#include "ncreport.h"
+#include "ncreportoutput.h"
+#include "ncreportpreviewoutput.h"
+#include "ncreportpreviewwindow.h"
 
 
 namespace Ui {
@@ -68,6 +76,10 @@ private slots:
     void on_tableWidget_4_itemDoubleClicked(QTableWidgetItem *item);
 
     void on_pushButton_clicked();
+
+    //void on_pushButton_10_clicked();
+
+    void on_tableWidget_6_itemDoubleClicked(QTableWidgetItem *item);
 
 private:
     Ui::MainForm *ui;

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NCReport version="2.19.0" name="Untitled" type="report">
+    <options>
+        <encoding>utf8</encoding>
+        <language>00</language>
+        <langrole>0</langrole>
+        <orientation>portrait</orientation>
+        <pagesize width="210.000" height="297.000">A4</pagesize>
+        <topmargin>15</topmargin>
+        <bottommargin>15</bottommargin>
+        <leftmargin>20</leftmargin>
+        <rightmargin>20</rightmargin>
+        <backcolor>#ffffff</backcolor>
+        <columns>0</columns>
+        <columnspace>0</columnspace>
+        <zoneSpacing>0</zoneSpacing>
+        <zoneBreak>false</zoneBreak>
+        <varErrorAlert>false</varErrorAlert>
+        <fontname>Nimbus Roman No9 L</fontname>
+        <fontsize>10</fontsize>
+        <fontstyle></fontstyle>
+        <htmlBodyStyle>{DEFAULT}</htmlBodyStyle>
+        <doublePass>true</doublePass>
+        <labelColumnCount>0</labelColumnCount>
+        <labelRowCount>0</labelRowCount>
+        <labelHGap>0</labelHGap>
+        <labelVGap>0</labelVGap>
+        <labelWidth>0</labelWidth>
+        <labelHeight>0</labelHeight>
+        <labelDirection>horizontal</labelDirection>
+        <endless>true</endless>
+    </options>
+    <datasources>
+        <datasource id="ds" allowEmpty="true" enabled="true" type="txt" openRole="begin" source="static" columnDelimiter="semicolon" hasColumnHeader="true" encoding="UTF-8">key;group;code;name;price
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+6.2;1;541200;Melone;3.90
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+6.2;1;541200;Melone;3.90
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+6.2;1;541200;Melone;3.90
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+6.2;1;541200;Melone;3.90
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+6.2;1;541200;Melone;3.90
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+6.2;1;541200;Melone;3.90
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75
+1;0;154874;Seven up;2.4
+2;0;254668;Coca cola;2.3
+3;0;021342;Fanta orange;2.12
+4;1;650217;Peanut butter;4.98
+5;1;022432;Chocolate Milka;1.29
+6;1;399804;Sugar;2.50
+7;2;164370;Bread;2.90
+8;2;021447;Roll;0.80
+9;2;784116;Croissant;0.75</datasource>
+    </datasources>
+    <variables>
+        <variable id="price_total" type="num" funcType="sum" scope="group" initValue="0">price</variable>
+    </variables>
+    <scripts/>
+    <pageheader id="phead" height="15.610">
+        <rectangle id="5ZY4H" zValue="0" posX="0.000" posY="9.525" width="169.862" height="4.762" lineColor="#000000" lineStyle="nopen" lineWidth="0.100" fillStyle="solid" fillColor="#ffff00"/>
+        <label id="1" zValue="1" posX="0.000" posY="0.000" width="169.862" height="7.938" fontName="Nimbus Roman No9 L" fontSize="16" fontWeight="bold" alignment="4">Simple grouping example</label>
+        <field id="2" zValue="2" posX="20.637" posY="9.525" width="14.287" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" type="txt" ftype="ds">key</field>
+        <field id="3" zValue="3" posX="34.925" posY="9.525" width="28.575" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">code</field>
+        <field id="4" zValue="4" posX="149.225" posY="9.525" width="19.050" height="4.762" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="2" type="num" ftype="ds" formatting="true" numwidth="0" format="f" precision="2" localized="true">price</field>
+        <field id="5" zValue="5" posX="63.500" posY="9.525" width="82.815" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">name</field>
+    </pageheader>
+    <pagefooter id="pfoot" height="11.670">
+        <rectangle id="SUIYK" zValue="0" posX="0.000" posY="6.350" width="169.862" height="4.762" lineColor="#000000" lineStyle="nopen" lineWidth="0.100" fillStyle="solid" fillColor="#ffff00"/>
+        <field id="1" zValue="1" posX="61.912" posY="6.350" width="14.287" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" type="txt" ftype="ds">key</field>
+        <field id="2" zValue="2" posX="73.025" posY="6.350" width="28.575" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">code</field>
+        <field id="3" zValue="3" posX="146.050" posY="6.350" width="23.812" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="2" type="num" ftype="ds" formatting="true" numwidth="0" format="f" precision="2" localized="true">price</field>
+        <field id="4" zValue="4" posX="95.250" posY="6.350" width="82.815" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">name</field>
+        <label id="5" zValue="5" posX="0.000" posY="0.000" width="23.812" height="5.027" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1">Page footer</label>
+        <label id="6" zValue="6" posX="26.987" posY="0.000" width="39.952" height="5.027" printWhen="$D{key}==5" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1">Printwhen: key=5</label>
+        <text id="7" zValue="7" posX="136.790" posY="0.000" width="32.015" height="5.027" resource="datasource" useFont="true" fontName="Nimbus Roman No9 L" fontSize="10" forecolor="#000000">key</text>
+    </pagefooter>
+    <details>
+        <detail id="Detail1" height="4.498" datasource="ds">
+            <items>
+                <field id="HTPFP" zValue="0" posX="20.637" posY="0.000" width="14.287" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" type="txt" ftype="ds">key</field>
+                <field id="1" zValue="1" posX="34.925" posY="0.000" width="28.575" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">code</field>
+                <field id="2" zValue="2" posX="63.500" posY="0.000" width="82.815" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" bgMode="fb" backcolor="#ffffff" type="txt" ftype="ds">name</field>
+                <field id="3" zValue="3" posX="146.050" posY="0.000" width="23.812" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="2" forecolor="#00aa00" type="num" ftype="ds" formatting="true" numwidth="0" format="f" precision="2" localized="true">price</field>
+                <field id="WO4H1" zValue="4" posX="0.000" posY="0.000" width="20.637" height="4.762" resource="tpl" template="true" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="tpl">Row  $V{currentrow}</field>
+            </items>
+            <groups>
+                <group id="Group1" groupExp="group" resetVariables="price_total" reprintHeader="false" startsOnNewPage="false">
+                    <groupheader id="GH_Group1" height="5.556">
+                        <label id="N7Q30" zValue="0" posX="20.637" posY="0.000" width="23.812" height="5.027" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" forecolor="#005500">Group header:</label>
+                        <field id="1" zValue="1" posX="96.837" posY="0.000" width="49.212" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" forecolor="#005500" type="txt" ftype="ds">name</field>
+                        <field id="2" zValue="2" posX="63.500" posY="0.000" width="9.525" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" forecolor="#005500" type="txt" ftype="ds">key</field>
+                        <field id="3" zValue="3" posX="74.612" posY="0.000" width="20.637" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" forecolor="#005500" type="txt" ftype="ds">code</field>
+                        <field id="4" zValue="4" posX="50.800" posY="0.000" width="11.377" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" forecolor="#005500" type="txt" ftype="ds">group</field>
+                        <line id="TOCW7" zValue="5" lineColor="#000000" lineStyle="solid" lineWidth="0.300" fromX="0.000" fromY="4.762" toX="169.862" toY="4.762"/>
+                        <line id="CH9UK" zValue="6" lineColor="#000000" lineStyle="solid" lineWidth="0.300" fromX="0.000" fromY="0.000" toX="169.862" toY="0.000"/>
+                        <field id="QR7TA" zValue="7" posX="0.000" posY="0.000" width="20.637" height="4.762" resource="tpl" template="true" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="tpl">Row  $V{currentrow}</field>
+                    </groupheader>
+                    <groupfooter id="GF_Group1" height="11.906">
+                        <field id="ROE94" zValue="0" posX="49.212" posY="0.000" width="11.377" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" forecolor="#0000ff" type="txt" ftype="ds">group</field>
+                        <label id="1" zValue="1" posX="25.400" posY="0.000" width="23.812" height="5.027" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" forecolor="#0000ff">Group footer:</label>
+                        <line id="2" zValue="2" lineColor="#000000" lineStyle="solid" lineWidth="0.300" fromX="0.000" fromY="0.000" toX="169.862" toY="0.000"/>
+                        <field id="3" zValue="3" posX="146.050" posY="0.000" width="23.812" height="5.027" resource="var" fontName="Nimbus Roman No9 L" fontSize="10" alignment="2" type="num" ftype="var" formatting="true" numwidth="0" format="f" precision="2" localized="true">price_total</field>
+                        <field id="4" zValue="4" posX="61.912" posY="0.000" width="9.525" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" forecolor="#0000ff" type="txt" ftype="ds">key</field>
+                        <field id="5" zValue="5" posX="73.025" posY="0.000" width="20.637" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" forecolor="#0000ff" type="txt" ftype="ds">code</field>
+                        <field id="6" zValue="6" posX="95.250" posY="0.000" width="49.212" height="5.027" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" forecolor="#0000ff" type="txt" ftype="ds">name</field>
+                        <field id="CWCII" zValue="7" posX="0.000" posY="0.000" width="22.225" height="4.762" resource="tpl" template="true" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="tpl">Row  $V{currentrow}</field>
+                    </groupfooter>
+                </group>
+            </groups>
+        </detail>
+    </details>
+</NCReport>

@@ -1,0 +1,13 @@
+****************************************************************************
+* NCReport 2.20.3
+* Release date: 29.Apr.2017
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+0071841: [Report engine library] NCReport::runReportToPdf gives failed assertion when called in non-GUI thread (administrator)
+0071863: [General] Several minor fixes and updates (administrator)
+0071862: [General] QGraphicsView Print Support for printing Qt5 Charts or any QGraphicsView content (administrator)
+0071857: [Report engine library] Major data source management error (administrator)
+0071860: [Report engine library] Missing Hungarian translation for tooltip (administrator)
+0071858: [Designer] "Use model appearance roles" skips the normal style options (administrator)
+0071861: [Report engine library] First value missing in double-pass-mode (administrator)

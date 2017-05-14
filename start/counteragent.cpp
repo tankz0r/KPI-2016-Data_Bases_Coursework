@@ -88,6 +88,11 @@ void CounterAgent::on_pushButton_3_clicked()
     {
         QSqlQuery qry =mydb.exec(QString("INSERT INTO \"HappyCake_main\".physical_face (surname, name, date_of_birth, address, telephone_number) "
                                      "VALUES ('%1','%2','%3','%4','%5')").arg(surname, name, date, addr, tel));
+
+        ui->lineEdit->setText("");
+        ui->lineEdit_2->setText("");
+        ui->lineEdit_4->setText("");
+        ui->lineEdit_5->setText("");
     }
 
     ui->ErrorLabel_Order_2->setText("<html><head/><body><p style=\"color:red;\">"+err+
@@ -166,7 +171,10 @@ void CounterAgent::on_pushButton_4_clicked()
 
         QSqlQuery qry =mydb.exec(QString("INSERT INTO \"HappyCake_main\".corporate_face (company_name, identification_code, telefon_number, adress) "
                                          "VALUES ('%1','%2','%3','%4')").arg( name, ind_code, tel, addr));
+
+
     }
+
 
     ui->ErrorLabel_Order->setText("<html><head/><body><p style=\"color:red;\">"+err+
                                   "</p></body></html>");

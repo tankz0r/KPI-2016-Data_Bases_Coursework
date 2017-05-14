@@ -7,9 +7,6 @@ qungoods::qungoods(QWidget *parent, QSqlDatabase db1) :
 {
     ui->setupUi(this);
     mydb = db1;
-
-    qDebug()<< "TWO";
-
     for (int i = 0; i < ui->tableWidget_6->horizontalHeader()->count(); ++i)
             ui->tableWidget_6->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
 
@@ -125,7 +122,7 @@ void qungoods::on_pushButton_clicked()
 {
     QItemSelectionModel *select = ui->tableWidget_6->selectionModel();
     QString name = select->selectedIndexes().value(0).data().toString();
-    qDebug()<< "ONE"<< name;
+    qDebug()<<name;
     onButtonSend(name);
     delete select;
     close();

@@ -1,0 +1,16 @@
+****************************************************************************
+* NCReport 2.20.1
+* Release date: 03.Jan.2017
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+0071817: [Designer] Sub Report will freeze if subquery returns no resultset (administrator)
+0071818: [General] saving to PDF from the preview no warning if the PDF file is opened (blocked) (administrator)
+0071845: [General] Several minor fixes, internal fixes (administrator)
+0071776: [General] Field: Data Type 'Duration' (administrator)
+0071843: [Report engine library] Barcode printing: QProcess error if QT_NO_PROCESS is defined (administrator)
+0071844: [Designer] NCRDMainWindow::updateMenus() mnRun pointer error (administrator)
+0071839: [General] Font size difference in PDF output and screen/designer under Mac (administrator)
+0071842: [Report engine library] Data source relations - endless loop when no data in (middle) child data source (administrator)
+0071834: [Designer] label for data-source in designer's data-source-tree (administrator)
+

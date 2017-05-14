@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NCReport version="2.19.0" name="Untitled" type="report">
+    <options>
+        <encoding>UTF-8</encoding>
+        <language>00</language>
+        <langrole>0</langrole>
+        <orientation>portrait</orientation>
+        <pagesize width="210.000" height="297.000">A4</pagesize>
+        <topmargin>15</topmargin>
+        <bottommargin>15</bottommargin>
+        <leftmargin>20</leftmargin>
+        <rightmargin>20</rightmargin>
+        <backcolor>#ffffff</backcolor>
+        <columns>0</columns>
+        <columnspace>0</columnspace>
+        <zoneSpacing>0</zoneSpacing>
+        <zoneBreak>false</zoneBreak>
+        <varErrorAlert>false</varErrorAlert>
+        <fontname>Arial</fontname>
+        <fontsize>10</fontsize>
+        <fontstyle></fontstyle>
+        <htmlBodyStyle>{DEFAULT}</htmlBodyStyle>
+        <labelColumnCount>0</labelColumnCount>
+        <labelRowCount>0</labelRowCount>
+        <labelHGap>0</labelHGap>
+        <labelVGap>0</labelVGap>
+        <labelWidth>-1</labelWidth>
+        <labelHeight>-1</labelHeight>
+        <labelDirection>horizontal</labelDirection>
+    </options>
+    <datasources>
+        <datasource id="ds" allowEmpty="true" enabled="true" type="txt" openRole="begin" source="static" columnDelimiter="tab" encoding="UTF-8">0	KKweh qiwue hasdiu hhq iwudh iuhwue</datasource>
+    </datasources>
+    <variables/>
+    <scripts/>
+    <pageheader id="PH" height="14.287"/>
+    <pagefooter id="PF" height="10.000"/>
+    <details>
+        <detail id="Detail1" height="57.150" datasource="ds">
+            <items>
+                <label id="KL7TS" zValue="0" posX="3.175" posY="1.587" width="52.387" height="49.212" fontName="Arial" fontSize="10" rotation="270" forecolor="#000000">Hweiu hqiwue ihhqhwe iuhiqwueh </label>
+                <field id="WAXL7" zValue="1" posX="60.325" posY="1.587" width="47.625" height="49.212" resource="datasource" fontName="Arial" fontSize="10" rotation="270" forecolor="#000000" type="txt" ftype="ds">col1</field>
+            </items>
+        </detail>
+    </details>
+</NCReport>

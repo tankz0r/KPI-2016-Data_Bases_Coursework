@@ -29,11 +29,10 @@ public slots:
     void on_pushButton_clicked();
     void recieveData(QString word);
     void recieveDataQuan(QString word);
-    void userclicked();
+    //void userclicked();
 
 private slots:
     void on_tableWidget_itemDoubleClicked(QTableWidgetItem *item);
-
     void on_pushButton_ok_clicked();
 
     void on_addButton_clicked();

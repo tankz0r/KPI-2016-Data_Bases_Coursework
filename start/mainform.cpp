@@ -344,37 +344,99 @@ void MainForm::on_pushButton_clicked()
     QStringList list;
     QString query;
 
-    QFile caFile("output.odt");
-    caFile.open(QIODevice::WriteOnly | QIODevice::Text);
-
-    if(!caFile.isOpen()){
-        qDebug() << "- Error, unable to open" << "outputFilename" << "for output";
-    }
-
-    QTextStream outStream(&caFile);
-
-    query = QString("SELECT * FROM \"HappyCake_main\".physical_face ");
+    query = QString("SELECT * FROM \"HappyCake_main\".\"physical_face\"");
     //qDebug() << query;
     QSqlQuery sq = mydb.exec(query);
     QString res;
-
 
     while (sq.next())
     {
         res = "";
         for(int i=0; i<6 ;i++)
         res += sq.value(i).toString() + "; ";
-        outStream << res << endl;
         //qDebug() << res;
         list << res;
     }
 
-        qDebug() << list;
-        caFile.close();
+    NCReport *report = new NCReport();
+    //qDebug() << list;
+    report->setReportFile("/home/denys/start1/repo/report.xml");
+    report->addStringList(list, "model1");
+    //report->runReportToPreview();
+    report->runReportToPDF("/home/denys/start1/repo/report.pdf");
 
-        if(!(popen("soffice --calc output.odt", "r")))
-            {
-               qDebug() << "It doesnt work";
-            }
+    if (report->hasError())
+    {
+        qDebug() << "ERROR:" << report->lastErrorMsg();
+        ErrorWindow er(this, "Не можливо створити звіт");
+        er.setModal(true);
+        er.exec();
 
+    }
+    else
+    {
+          popen("gnome-open /home/denys/start1/repo/report.pdf", "r");
+//        NCReportPreviewWindow *pv = new NCReportPreviewWindow();
+//        pv->setOutput( (NCReportPreviewOutput*)report->output() );
+//        pv->setWindowModality( Qt::ApplicationModal );
+//        pv->setAttribute( Qt::WA_DeleteOnClose );
+//        pv->show();
+
+    }
+
+    delete report;
+}
+
+//    QStringList list;
+//    QString query;
+
+//    QFile caFile("output.odt");
+//    caFile.open(QIODevice::WriteOnly | QIODevice::Text);
+
+//    if(!caFile.isOpen()){
+//        qDebug() << "- Error, unable to open" << "outputFilename" << "for output";
+//    }
+
+//    QTextStream outStream(&caFile);
+
+//    query = QString("SELECT * FROM \"HappyCake_main\".physical_face ");
+//    //qDebug() << query;
+//    QSqlQuery sq = mydb.exec(query);
+//    QString res;
+
+
+//    while (sq.next())
+//    {
+//        res = "";
+//        for(int i=0; i<6 ;i++)
+//        res += sq.value(i).toString() + "; ";
+//        outStream << res << endl;
+//        //qDebug() << res;
+//        list << res;
+//    }
+
+//        qDebug() << list;
+//        caFile.close();
+
+//        if(!(popen("soffice --calc output.odt", "r")))
+//            {
+//               qDebug() << "It doesnt work";
+//            }
+
+
+
+void MainForm::on_tableWidget_6_itemDoubleClicked(QTableWidgetItem *item)
+{
+    QModelIndexList selection = ui->tableWidget_6->selectionModel()->selectedIndexes();
+    QModelIndex index = selection.at(0);
+    int id = index.row();
+    QTableWidgetItem *itab1 = ui->tableWidget_6->item(id,1);
+    QString itabtext1 = itab1->text();
+    QTableWidgetItem *itab2 = ui->tableWidget_6->item(id,2);
+    QString itabtext2 = itab2->text();
+    qDebug() << itabtext1.toInt() << itabtext2.toInt();
+    graph *g = new graph(this, itabtext1.toInt() , itabtext2.toInt());
+    g->setModal(true);
+    g->exec();
+    delete g;
 }

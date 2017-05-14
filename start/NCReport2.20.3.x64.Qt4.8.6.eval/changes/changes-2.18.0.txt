@@ -1,0 +1,13 @@
+****************************************************************************
+* NCReport 2.18.0
+* Release date: 21.Dec.2015
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+- 0071800: [Report engine library] HTML Text document report was not working sometimes (administrator) - resolved.
+- 0071796: [General] SVG image as (svg xml) parameter (administrator) - resolved.
+- 0071681: [General] Generate Table of Contents from sections (administrator) - resolved.
+- 0071794: [Report engine library] Static SVG image with SVG format not printed (administrator) - resolved.
+- 0071797: [General] QPrinter support (printsupport) usage to make optional. (administrator) - resolved.
+- 0071798: [General] QPdfWriter output introduction for supporting PDF output without printing support. (administrator) - resolved.
+- Other fixes

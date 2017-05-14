@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NCReport version="2.20.0" name="Untitled" type="report">
+    <options>
+        <encoding>utf8</encoding>
+        <language>00</language>
+        <langrole>0</langrole>
+        <orientation>portrait</orientation>
+        <pagesize width="210.000" height="297.000">A4</pagesize>
+        <topmargin>15</topmargin>
+        <bottommargin>15</bottommargin>
+        <leftmargin>20</leftmargin>
+        <rightmargin>20</rightmargin>
+        <backcolor>#ffffff</backcolor>
+        <columns>0</columns>
+        <columnspace>0</columnspace>
+        <zoneSpacing>0</zoneSpacing>
+        <zoneBreak>false</zoneBreak>
+        <varErrorAlert>false</varErrorAlert>
+        <fontname>Nimbus Roman No9 L</fontname>
+        <fontsize>10</fontsize>
+        <fontstyle></fontstyle>
+        <htmlBodyStyle>{DEFAULT}</htmlBodyStyle>
+        <labelColumnCount>0</labelColumnCount>
+        <labelRowCount>0</labelRowCount>
+        <labelHGap>0</labelHGap>
+        <labelVGap>0</labelVGap>
+        <labelWidth>-1</labelWidth>
+        <labelHeight>-1</labelHeight>
+        <labelDirection>horizontal</labelDirection>
+    </options>
+    <datasources>
+        <datasource id="customers" allowEmpty="true" enabled="true" type="sql" openRole="begin" source="static" connection="internal" connID="northwind">select CustomerID, CompanyName from customers limit 0,50</datasource>
+        <datasource id="tg" parentID="G_OUT" allowEmpty="true" enabled="true" type="sql" openRole="group" source="static" connection="internal" connID="northwind">select '$D{customers.CustomerID}' as xdata</datasource>
+        <datasource id="orders" parentID="customers" allowEmpty="true" enabled="true" type="sql" openRole="child" source="static" connection="internal" connID="northwind">select OrderID,CustomerID,EmployeeID,OrderDate,ShipName
+FROM orders
+WHERE CustomerID='$D{customers.CustomerID}'
+ORDER BY OrderID</datasource>
+        <datasource id="items" parentID="orders" allowEmpty="true" enabled="true" type="sql" openRole="child" source="static" connection="internal" connID="northwind">select concat(itemno,'-',orderid,'-',orderitems.productID) as pk,
+OrderID, orderitems.UnitPrice, Quantity, Itemno,
+products.productname,
+orderitems.UnitPrice*Quantity as Value
+FROM orderitems INNER JOIN products ON orderitems.productID = products.productID
+WHERE OrderID='$D{orders.OrderID}'
+ORDER BY Itemno</datasource>
+    </datasources>
+    <variables>
+        <variable id="CustomerTotal" type="num" funcType="sum" scope="group" initValue="0">items.Value</variable>
+        <variable id="OrderTotal" type="num" funcType="sum" scope="group" initValue="0">items.Value</variable>
+    </variables>
+    <scripts/>
+    <pageheader id="phead" height="25.389">
+        <field id="XVSB9" zValue="0" posX="125.095" posY="0.000" width="44.662" height="5.080" resource="sysvar" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="txt" ftype="sys">datetime</field>
+        <label id="1" zValue="1" posX="0.000" posY="0.000" width="89.958" height="9.525" fontName="Arial" fontSize="22" fontWeight="bold">Orders</label>
+        <text id="2" zValue="2" posX="0.000" posY="9.525" width="168.487" height="14.182" useFont="true" fontName="Nimbus Roman No9 L" fontSize="10" forecolor="#000000">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-style:italic;&quot;&gt;This report demonstrates the &lt;/span&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-weight:600; font-style:italic; color:#ff0000;&quot;&gt;subquery&lt;/span&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-style:italic;&quot;&gt; usage. In other words it's named also &quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-weight:600; font-style:italic;&quot;&gt;child query&lt;/span&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-style:italic;&quot;&gt;&quot; which means the often applied parent-child data &lt;/span&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-weight:600; font-style:italic;&quot;&gt;relation&lt;/span&gt;&lt;span style=&quot; font-family:'Nimbus Roman No9 L'; font-size:12pt; font-style:italic;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</text>
+    </pageheader>
+    <pagefooter id="pfoot" height="5.612">
+        <field id="BUNBC" zValue="0" posX="147.320" posY="0.000" width="22.437" height="5.080" resource="sysvar" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="num" ftype="sys" arg="Page %1">pageno</field>
+        <field id="1" zValue="1" posX="0.000" posY="0.000" width="144.145" height="5.080" resource="sysvar" fontName="Nimbus Roman No9 L" fontSize="8" alignment="1" type="txt" ftype="sys">appinfo</field>
+    </pagefooter>
+    <details>
+        <detail id="Detail1" height="5.080" printWhen="!$D{items.isEmpty()}" datasource="customers">
+            <items>
+                <rectangle id="E39KF" zValue="0" posX="0.000" posY="0.000" width="170.180" height="4.657" printWhen="%2" lineColor="#000000" lineStyle="nopen" lineWidth="0.200" fillStyle="solid" fillColor="#e1e1e1"/>
+                <field id="1" zValue="1" posX="12.700" posY="0.000" width="69.003" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontItalic="true" alignment="1" type="txt" ftype="ds">items.ProductName</field>
+                <field id="2" zValue="2" posX="0.000" posY="0.000" width="8.043" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="num" ftype="ds">items.itemNo</field>
+                <field id="3" zValue="3" posX="107.527" posY="0.000" width="18.838" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="num" ftype="ds" formatting="true" numwidth="0" format="f" precision="2" localized="true">items.UnitPrice</field>
+                <field id="4" zValue="4" posX="86.572" posY="0.000" width="15.875" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="num" ftype="ds">items.Quantity</field>
+                <field id="5" zValue="5" posX="149.013" posY="0.000" width="18.838" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="num" ftype="ds" formatting="true" numwidth="0" format="f" precision="2" localized="true">items.Value</field>
+            </items>
+            <groups>
+                <group id="G_OUT" groupExp="%CONST" resetVariables="" reprintHeader="false" startsOnNewPage="false">
+                    <groupheader id="GH_G_OUT" height="6.414">
+                        <label id="7T7UH" zValue="0" posX="0.000" posY="0.000" width="40.005" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1">Outmost Group Header</label>
+                        <field id="1" zValue="1" posX="41.487" posY="0.000" width="28.787" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">tg.xdata</field>
+                    </groupheader>
+                    <groupfooter id="GF_G_OUT" height="5.612">
+                        <label id="BRPQM" zValue="0" posX="0.000" posY="0.000" width="40.005" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1">Outmost Group Footer</label>
+                        <field id="1" zValue="1" posX="41.487" posY="0.000" width="28.787" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="1" type="txt" ftype="ds">tg.xdata</field>
+                    </groupfooter>
+                </group>
+                <group id="Group_customer" groupExp="customers.CustomerID" resetVariables="CustomerTotal" reprintHeader="false" startsOnNewPage="false">
+                    <groupheader id="GH_Group_customer" height="8.820" breakRole="so" orphanedTolerance="16">
+                        <field id="578FD" zValue="0" posX="0.000" posY="0.000" width="51.012" height="9.525" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="20" fontWeight="bold" alignment="1" forecolor="#aa0000" type="txt" ftype="ds">customers.CustomerID</field>
+                        <field id="1" zValue="1" posX="53.128" posY="0.000" width="117.052" height="9.525" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="14" fontWeight="bold" alignment="34" forecolor="#aa0000" type="txt" ftype="ds">customers.CompanyName</field>
+                    </groupheader>
+                    <groupfooter id="GF_Group_customer" height="8.285">
+                        <line id="9X0R2" zValue="0" lineColor="#aa0000" lineStyle="solid" lineWidth="0.450" fromX="0.000" fromY="1.482" toX="170.180" toY="1.482"/>
+                        <field id="1" zValue="1" posX="144.145" posY="1.482" width="24.130" height="5.080" resource="var" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="34" forecolor="#aa0000" type="num" ftype="var" formatting="true" numwidth="0" format="f" precision="2" localized="true">CustomerTotal</field>
+                        <field id="2" zValue="2" posX="96.308" posY="1.482" width="47.837" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" forecolor="#aa0000" type="txt" ftype="ds" arg="%1 total:">customers.CustomerID</field>
+                    </groupfooter>
+                </group>
+                <group id="Group_order" groupExp="orders.OrderID" resetVariables="OrderTotal" reprintHeader="true" startsOnNewPage="false">
+                    <groupheader id="GH_Group_order" height="11.220" breakRole="spd">
+                        <label id="HFMKP" zValue="0" posX="86.572" posY="0.000" width="17.780" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Order ID:</label>
+                        <field id="1" zValue="1" posX="105.833" posY="0.000" width="15.875" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" type="txt" ftype="ds">orders.OrderID</field>
+                        <label id="2" zValue="2" posX="125.095" posY="0.000" width="18.838" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Order Date:</label>
+                        <field id="3" zValue="3" posX="145.838" posY="0.000" width="22.437" height="5.080" resource="datasource" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="34" type="txt" ftype="ds">orders.OrderDate</field>
+                        <label id="4" zValue="4" posX="0.000" posY="4.657" width="11.007" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Itemno</label>
+                        <label id="5" zValue="5" posX="12.700" posY="4.657" width="46.355" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" fontItalic="true" alignment="1">Product name</label>
+                        <label id="6" zValue="6" posX="84.878" posY="4.657" width="19.262" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Quantity</label>
+                        <label id="7" zValue="7" posX="107.527" posY="4.657" width="18.838" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Unit price</label>
+                        <label id="8" zValue="8" posX="149.013" posY="4.657" width="18.838" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Total</label>
+                        <line id="9" zValue="9" lineColor="#000000" lineStyle="dashdot" lineWidth="0.200" fromX="-1.482" fromY="9.525" toX="168.487" toY="9.525"/>
+                        <field id="10" zValue="10" posX="0.000" posY="0.000" width="73.872" height="5.080" resource="tpl" template="true" fontName="Nimbus Roman No9 L" fontSize="10" fontWeight="bold" alignment="1" forecolor="#aa0000" type="txt" ftype="tpl">$D{orders.CustomerID} / $D{orders.ShipName}</field>
+                    </groupheader>
+                    <groupfooter id="GF_Group_order" height="7.480" printWhen="!$D{items.isEmpty()}">
+                        <line id="YYQQW" zValue="0" lineColor="#000000" lineStyle="solid" lineWidth="0.200" fromX="0.000" fromY="1.482" toX="170.180" toY="1.482"/>
+                        <field id="1" zValue="1" posX="145.838" posY="1.482" width="22.437" height="5.080" resource="var" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34" type="num" ftype="var" formatting="true" numwidth="0" format="f" precision="2" localized="true">OrderTotal</field>
+                        <label id="2" zValue="2" posX="110.702" posY="1.482" width="33.655" height="5.080" fontName="Nimbus Roman No9 L" fontSize="10" alignment="34">Order total:</label>
+                    </groupfooter>
+                </group>
+            </groups>
+        </detail>
+    </details>
+</NCReport>

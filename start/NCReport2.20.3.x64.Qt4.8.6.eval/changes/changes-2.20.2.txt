@@ -1,0 +1,15 @@
+****************************************************************************
+* NCReport 2.20.2
+* Release date: 31.Mar.2017
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+0071856: [General] Minor fixes, updates (administrator)
+0071853: [Report engine library] Data relation system classes - clarification (administrator)
+0071854: [Report engine library] TableView item: logical/visual index is not correct when user reorders the table columns (administrator)
+0071855: [Report engine library] Console mode compile/running support of report engine. (Without X server) (administrator)
+0071838: [Designer] Data Source Dialog: SQL tester easy go back to the query (administrator)
+0071852: [Report engine library] TableView item HTML output features (administrator)
+0071847: [Report engine library] page-break twice (administrator)
+0071848: [Report engine library] icon for 'NCReportPreviewWindowPrivate::actionGo' (administrator)
+0071849: [Report engine library] text cut off in case of: AutomaticHeigth & WordWrapping (administrator)

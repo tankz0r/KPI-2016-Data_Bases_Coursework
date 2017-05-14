@@ -1,0 +1,16 @@
+****************************************************************************
+* NCReport 2.20.0
+* Release date: 30.Sep.2016
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+- 0071833: [General] Sub projects to use NCReport library instead of static integration (administrator) - resolved.
+- 0071832: [General] Several minor fixes, internal fixes (administrator) - resolved.
+- 0071825: [Report engine library] Pivot Table printing problem (administrator) - resolved.
+- 0071826: [Report engine library] run report as PDF into QByteArray (administrator) - resolved.
+- 0071827: [Report engine library] New preview window module (administrator) - resolved.
+- 0071828: [Report engine library] Table view item - optional keeping aspect ratio (administrator) - resolved.
+- 0071829: [Designer] Designer and Preview window - to enlarge the standard design screen resolution (administrator) - resolved.
+- 0071830: [General] New GUI icon design (administrator) - resolved.
+- 0071831: [Report engine library] preview-window: export to excel (administrator) - resolved.
+

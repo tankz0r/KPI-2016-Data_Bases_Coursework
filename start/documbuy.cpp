@@ -59,14 +59,11 @@ void documbuy::recieveData(QString word)
 void documbuy::recieveDataQuan(QString word)
 {
     ui->tableWidget->setItem(number,0, new QTableWidgetItem(word));
-    qDebug()<< "SIX";
     //QTextStream(stdout) << "recieveDataQuan"<<word << endl;
 }
 
 void documbuy::on_pushButton_2_add_next_commodity_clicked()
 {
-
-
     int n = 0;
     for (int i=0; i< ui->tableWidget->rowCount(); ++i)
     {
@@ -284,14 +281,7 @@ void documbuy::on_pushButton_clicked()
 
 void documbuy::on_tableWidget_itemDoubleClicked(QTableWidgetItem *item)
 {
-    qDebug()<< "FIVE";
-    connect(ui->tableWidget, SIGNAL(itemActivated (QTableWidgetItem *)), this, SLOT(userclicked()));
-}
-
-void documbuy::userclicked()
-{
-
-    qDebug()<< "FOUR";
+    //connect(ui->tableWidget, SIGNAL(itemActivated(QTableWidgetItem *)), this, SLOT(userclicked()));
     QModelIndexList selection = ui->tableWidget->selectionModel()->selectedIndexes();
     QModelIndex index = selection.at(0);
     int id = index.row();
@@ -301,12 +291,22 @@ void documbuy::userclicked()
     q->setModal(true);
     q->exec();
     delete q;
-    qDebug()<< "THREE";
-
 }
 
-
-
+//void documbuy::userclicked()
+//{
+//    qDebug() << "CONSTRUCTOR userclicked";
+//    QModelIndexList selection = ui->tableWidget->selectionModel()->selectedIndexes();
+//    QModelIndex index = selection.at(0);
+//    int id = index.row();
+//    number = id;
+//    qungoods *q = new qungoods(this, mydb);
+//    QObject::connect(q, SIGNAL(sendData(QString)), this, SLOT(recieveDataQuan(QString)));
+//    q->setModal(true);
+//    q->exec();
+//    delete q;
+//    qDebug() << "Destructor userclicked";
+//}
 
 void documbuy::on_pushButton_ok_clicked()
 {

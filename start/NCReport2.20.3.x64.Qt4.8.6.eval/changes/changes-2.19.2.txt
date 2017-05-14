@@ -1,0 +1,10 @@
+****************************************************************************
+* NCReport 2.19.2
+* Release date: 04.Jul.2016
+* Features and bugfixes are tracked at http://tracker.ncreport.org
+****************************************************************************
+
+- 0071822: [Report engine library] Table view printing - to support tree view (administrator) - resolved.
+- 0071823: [General] Several minor fixes, internal fixes (administrator) - resolved.
+- 0071820: [Designer] Lines to support 2nd point coordinates in property editor (administrator) - resolved.
+- 0071821: [Designer] Line item - better support of selecting - to make it more responsive (administrator) - resolved.

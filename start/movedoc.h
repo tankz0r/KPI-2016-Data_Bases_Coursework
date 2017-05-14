@@ -20,7 +20,7 @@ public:
 
 public slots:
     void recieveDataQuan(QString word);
-    void userclicked();
+    //void userclicked();
 
 private slots:
     void on_pushButton_2_add_next_commodity_clicked();

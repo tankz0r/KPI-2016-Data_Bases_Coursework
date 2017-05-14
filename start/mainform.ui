@@ -85,7 +85,7 @@
       <bool>true</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -743,7 +743,7 @@
          <rect>
           <x>140</x>
           <y>10</y>
-          <width>161</width>
+          <width>214</width>
           <height>71</height>
          </rect>
         </property>
@@ -806,7 +806,7 @@
         <enum>QAbstractScrollArea::AdjustIgnored</enum>
        </property>
        <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
+        <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
        </property>
        <column>
         <property name="text">

@@ -164,18 +164,7 @@ ui->ErrorLabel_Order->setText("<html><head/><body><p style=\"color:red;\">"+err+
 
 void movedoc::on_tableWidget_itemDoubleClicked(QTableWidgetItem *item)
 {
-   connect(ui->tableWidget, SIGNAL(itemActivated (QTableWidgetItem *)), this, SLOT(userclicked()));
-}
-
-void movedoc::recieveDataQuan(QString word)
-{
-    ui->tableWidget->setItem(number,0, new QTableWidgetItem(word));
-    QTextStream(stdout) << "recieveDataQuan"<<word << endl;
-}
-
-void movedoc::userclicked()
-{
-
+  // connect(ui->tableWidget, SIGNAL(itemActivated (QTableWidgetItem *)), this, SLOT(userclicked()));
     QModelIndexList selection = ui->tableWidget->selectionModel()->selectedIndexes();
     QModelIndex index = selection.at(0);
     int id = index.row();
@@ -184,6 +173,12 @@ void movedoc::userclicked()
     QObject::connect(q, SIGNAL(sendData(QString)), this, SLOT(recieveDataQuan(QString)));
     q->setModal(true);
     q->exec();
+}
+
+void movedoc::recieveDataQuan(QString word)
+{
+    ui->tableWidget->setItem(number,0, new QTableWidgetItem(word));
+    QTextStream(stdout) << "recieveDataQuan"<<word << endl;
 }
 
 void movedoc::on_addButton_clicked()
