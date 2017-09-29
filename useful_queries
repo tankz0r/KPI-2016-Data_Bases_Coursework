@@ -1,0 +1,239 @@
+select id, user_id, category_id, date_created from advert
+where user_id = 1705502;
+
+select date_auto, "moderation_field_verdict".advert_id, "moderation_field_verdict".comment from "moderation_field_verdict", "moderation_verdict"
+where date_auto > '2017-07-01 13:22:58.812698'
+and "moderation_field_verdict".ve = "moderation_verdict".advert_id
+and "moderation_field_verdict".auto_verdict = 2
+and moderator = 3
+and  date_auto is not NULL
+;
+
+select date_trunc('day', date_auto) d, count(1)
+  from moderation_field_verdict fv
+    join moderation_verdict mv
+      on mv.id = fv.verdict_id
+    where fv.comment ilike '%gibb%'
+    and date_auto > '2017-08-10'
+    GROUP BY d
+;
+
+
+select date_trunc('day', date_auto) d, count(1)
+from moderation_field_verdict fv
+  join moderation_verdict mv
+    on mv.id = fv.verdict_id
+  and date_auto > '2017-08-10'
+  group by d
+  order by d;
+
+
+select a.description, fv.manual_verdict
+  from moderation_field_verdict fv
+  join moderation_verdict mv
+       on mv.id = fv.verdict_id
+  join advert a
+       on a.id = fv.advert_id
+  where fv.comment ilike '%gibb%'
+  and date_auto > '2017-08-10'
+  ;
+
+
+select fv.id, verdict_id, fv.advert_id, fv.field,
+       fv.auto_verdict, fv.comment, date_auto,
+       le.date, le.field, le.old_value,
+       le.new_value, le.source
+
+  from  moderation_field_verdict fv
+  join moderation_verdict mv
+      on mv.id = fv.verdict_id
+  join log_advert_edit le
+     on fv.advert_id =
+        le.advert_id
+  where mv.advert_id = 19164
+  and source = 1
+  and fv.field in (3, 4)
+  ORDER BY date_auto;
+
+
+select fv.id, verdict_id, fv.advert_id, fv.field,
+       fv.auto_verdict, fv.comment, date_auto,
+       le.date, le.field, le.old_value,
+       le.new_value, le.source
+
+  from  moderation_field_verdict fv
+  join moderation_verdict mv
+      on mv.id = fv.verdict_id
+  join log_advert_edit le
+     on fv.advert_id =
+        le.advert_id
+  where mv.advert_id = 19164
+  and source = 1
+  and fv.field in (3, 4)
+  ORDER BY date_auto;
+
+
+select mv.id, mv.advert_id, min(ms.date_created)
+  from moderation_verdict mv
+    join moderation_stats ms
+      on ms.item_id = mv.advert_id
+      and ms.type = 0
+    join moderation_field_verdict fv
+      on mv.id = fv.verdict_id
+    join log_advert_edit le
+      on mv.advert_id = le.advert_id
+      and le.source = 1
+      and le.field = 2
+  where ms.date_created > mv.date_auto
+  and ms.data -> 'status' is not null
+  and mv.date_auto > '2017-07-01'
+  and mv.advert_id = 19164
+  group by mv.id
+;
+
+
+select count(tmp.id) as number
+FROM
+  ((select  mv.date_auto, mv.advert_id, min(ms.date_created)
+    from moderation_verdict mv
+      join moderation_stats ms
+        on ms.item_id = mv.advert_id
+
+        and ms.type = 0
+      join moderation_field_verdict fv
+        on mv.id = fv.verdict_id
+        and fv.auto_verdict = 2
+        and fv.field = 3
+    where ms.date_created > mv.date_auto
+    and ms.data -> 'status' is not null
+    and mv.date_auto > '2017-08-01'
+    group by mv.id) as foo
+       join log_advert_edit le
+       on foo.advert_id = le.advert_id
+       and foo.min > le.date and foo.date_auto < le.date
+       and le.source = 1
+       and le.field = 2) as tmp
+  ;
+
+
+select count(*) from moderation_stats ms
+  where date_created >= '2017-08-07' and  date_created <= '2017-09-01'
+  and data ->> 'category_id' is not null
+  and type = 0;
+
+
+select * from moderation_stats ms
+  where date_created >= '2017-08-07' and  date_created <= '2017-09-01'
+  and data ->> 'status' is not null;
+
+-- 1)
+-- , (1.0*tmp.count/sum(tmp.count)), tmp.category_id
+select sum(tmp.procent)
+  from
+      (select 1.0*count(ad.category_id)/99395 as procent, ad.category_id
+          from moderation_verdict mv
+            join moderation_field_verdict fv
+              on mv.id = fv.verdict_id
+              and fv.field = 3
+            join advert ad
+              on mv.advert_id = ad.id
+          where mv.date_auto > '2017-05-01' and  mv.date_auto < '2017-09-01'
+              and fv.auto_verdict = 2
+    GROUP BY fv.field, fv.auto_verdict, ad.category_id) as tmp
+-- GROUP BY tmp.category_id
+  ;
+
+
+--2)
+
+select advert_id, old_value, new_value
+    from log_advert_edit
+    where field != 2
+    and source = 1
+    and date > '2017-05-01'
+GROUP BY old_value::text;
+;
+
+
+--2) check
+
+select count(ad.category_id), ad.category_id
+  from moderation_stats ms
+    join advert ad
+      on ms.item_id = ad.id
+  where ms.data ->> 'category' is NULL
+  and ad.date_created > '2017-05-01'
+  and ms.type = 0
+GROUP BY ad.category_id;
+
+
+--3)
+select sum(ct.count)
+from
+  (select 1.0*count(tmp.category_id)/26963 as percent, tmp.category_id
+  FROM
+    ((select  mv.date_auto, mv.advert_id, min(ms.date_created)
+      from moderation_verdict mv
+        join moderation_stats ms
+          on ms.item_id = mv.advert_id
+          and ms.type = 0
+        join moderation_field_verdict fv
+          on mv.id = fv.verdict_id
+          and fv.auto_verdict = 2
+          and fv.field = 3
+      where ms.date_created > mv.date_auto
+      and ms.data -> 'status' is not null
+      and mv.date_auto > '2017-05-01'
+      group by mv.id) as foo
+         join log_advert_edit le
+           on foo.advert_id = le.advert_id
+           and foo.min > le.date and foo.date_auto < le.date
+           and le.source = 1
+           and le.field !=2
+         join advert ad
+           on foo.advert_id = ad.id) as tmp
+  GROUP BY category_id) as ct
+    ;
+
+
+select count(advert.id) from advert
+  where advert.status=0;
+
+
+select score, user_id, date_created from fraud_prediction, public.user
+  where public.user.id = fraud_prediction.user_id
+  and fraud_prediction.possible_fraud = True
+  and date_analysed > '2017-09-10'
+  and score <1
+
+
+CREATE OR REPLACE FUNCTION to_seconds(t text)
+  RETURNS integer AS
+$BODY$
+DECLARE
+    hs INTEGER;
+    ms INTEGER;
+    s INTEGER;
+BEGIN
+    SELECT (EXTRACT( HOUR FROM  t::time) * 60*60) INTO hs;
+    SELECT (EXTRACT (MINUTES FROM t::time) * 60) INTO ms;
+    SELECT (EXTRACT (SECONDS from t::time)) INTO s;
+    SELECT (hs + ms + s) INTO s;
+    RETURN s;
+END;
+$BODY$
+  LANGUAGE 'plpgsql';
+
+
+select status_new, fraud_prediction.user_id, (log_user_status.date_created - public."user".date_created)
+  from public.user, log_user_status, fraud_prediction
+  where log_user_status.user_id = public.user.id
+  and fraud_prediction.possible_fraud = True
+  and public.user.id = fraud_prediction.user_id
+  and public.user.date_created > '2017-06-10'
+  and EXTRACT(year FROM (log_user_status.date_created - public."user".date_created))=0
+  and EXTRACT(month FROM (log_user_status.date_created - public."user".date_created))=0
+  and EXTRACT(day FROM (log_user_status.date_created - public."user".date_created))=0
+  and EXTRACT(hour FROM (log_user_status.date_created - public."user".date_created))< 2
+
+
