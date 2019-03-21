@@ -1,10 +1,10 @@
 # PostgreSQL application
-This application is built using C++ with Qt framework and PostgreSQL. PostgreSQL was hosted remotely on AWS db instance.  
+This application is built using C++ with Qt framework and PostgreSQL. PostgreSQL was hosted remotely on the AWS db instance.  
 
 ![image](https://user-images.githubusercontent.com/13698885/45640647-80588f80-bab3-11e8-93b8-4e035eb9bc57.png))
 
 This course project is dedicated to databases. PostgreSQL was chosen as the backend database and Qt as the framework for frontend part.
-Application represents system for keeping a record of the goods, clients and contractors.
+This application represents the system for keeping records of goods, clients and contractors.
 
 ### Some screenshots of UI:
 
